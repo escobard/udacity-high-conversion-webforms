@@ -1,5 +1,5 @@
 # Udacity - Building High Conversion Web Forms - By Google
-This repository contains all my own programming project files, notes, and associated files for the [Udacity - Object Oriented JavaScript - By HACKREACTOR](https://www.udacity.com/course/building-high-conversion-web-forms--ud890) course with [Udacity](https://www.udacity.com/). 
+This repository contains all my own programming project files, notes, and associated files for the [Udacity - Building High Conversion Web Forms - By Google](https://www.udacity.com/course/building-high-conversion-web-forms--ud890) course with [Udacity](https://www.udacity.com/). 
 
 None of the provided course example files, or content are provided in this repository. To get access to these files, please sign up to the course via the above link.
 
