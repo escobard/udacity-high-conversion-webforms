@@ -37,16 +37,17 @@ function IssueTracker() {
 // establishes the IssueTracker prototype object methods
 IssueTracker.prototype = {
 
-// adds the function to push the issue argument into the issues array
+// adds the function method 'add' to push the issue argument into the issues array
   add: function (issue) {
     this.issues.push(issue);
   },
 
- // retrieves the length of the issues array as a string.
+ // adds the function method 'retrieve' to return the length of the issues array as a string.
   retrieve: function () {
     var message = "";
     switch (this.issues.length) {
-      //if the length of the issues array is 0, the switch returns as true, so it allows submit
+      //if the length of the issues array is 0, this returns an empty string.
+      //empty strings are what setCustomValidity expects for validated inputs on forms, which allows the form submit if the argument of the function is returned as an empty string
       case 0:
         // do nothing because message is already ""
         break;
@@ -116,7 +117,9 @@ submit.onclick = function () {
     }
     // if password does not have alphanumerical characters, numbers, or the allowed symbols
     var illegalCharacterGroup = firstPassword.match(/[^A-z0-9\!\@\#\$\%\^\&\*]/g)
+
     if (illegalCharacterGroup) {
+    // adds a function for each found illegal character, and adds it to the issues array, which then returns an issue message for each illegal charcater
       illegalCharacterGroup.forEach(function (illegalChar) {
         firstInputIssuesTracker.add("includes illegal character: " + illegalChar);
       });
