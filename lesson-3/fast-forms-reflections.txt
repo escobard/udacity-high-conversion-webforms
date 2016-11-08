@@ -1,0 +1,7 @@
+1. The first middle and last name could all be within the same field. 
+2. No need for age, or gender for a checkout form. 
+3. No need for duplicate email address fields
+4. No need for duplicate name fields in shipping info.
+5. No need for a company field in the shipping info.
+6. Billing address / shipping address could be the same exact information. Could make the shipping information only show up if the SHIPPING address is different from the BILLING address.
+7. Cart should be visible at the top of the checkout form, or alongside the form not the bottom. 
