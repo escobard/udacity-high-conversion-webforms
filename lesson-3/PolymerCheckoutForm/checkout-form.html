@@ -45,12 +45,11 @@
   width: 100%;
 	}
 </style>
-  <div class="horizontal layout center form-title">
-    <div class="avatar" item-icon></div>
-    <div class="flex company">ACME Goods Co.</div>
-  </div>
   <form is="iron-form" id="form" method="post" action="/checkout">
-  		<paper-input name="name" label="Name on card" required autocomplete="cc-name"></paper-input>
+		<h2>Where do you want your Order Sent?</h2>
+		<paper-input id ="user-name" name="name" label="What's your name?" required autocomplete="name"></paper-input>
+		<paper-input id="address" label="Where would you like this shipped?" required autocomplete="street-addres"></paper-input>
+  		<h2>How would you like to pay?</h2>
   		<gold-cc-input name="cc-number" required auto-validate card-type="{{typeOfCard}}"></gold-cc-input>
   		<div class="horizontal layout">
     		<gold-cc-expiration-input name="cc-expiration" required auto-validate label="Expiration"></gold-cc-expiration-input>
