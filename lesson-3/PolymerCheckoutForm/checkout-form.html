@@ -1,6 +1,12 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
-
+<link rel="import" href="bower_components/iron-form/iron-form.html">
+<link rel="import" href="bower_components/paper-input/paper-input.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+<link rel="import" href="bower_components/gold-cc-input/gold-cc-input.html">
+<link rel="import" href="bower_components/gold-email-input/gold-email-input.html">
+<link rel="import" href="bower_components/gold-cc-cvc-input/gold-cc-cvc-input.html">
+<link rel="import" href="bower_components/gold-cc-expiration-input/gold-cc-expiration-input.html">
 <dom-module id="checkout-form">
 
 <template>
@@ -33,6 +39,9 @@
     <div class="avatar" item-icon></div>
     <div class="flex company">ACME Goods Co.</div>
   </div>
+      <form is="iron-form" id="form" method="post" action="/checkout">
+  <paper-input name="name" label="Name on card" required autocomplete="cc-name"></paper-input>
+</form>
 </template>
 
   <script>
