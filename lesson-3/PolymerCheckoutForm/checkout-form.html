@@ -7,6 +7,7 @@
 <link rel="import" href="bower_components/gold-email-input/gold-email-input.html">
 <link rel="import" href="bower_components/gold-cc-cvc-input/gold-cc-cvc-input.html">
 <link rel="import" href="bower_components/gold-cc-expiration-input/gold-cc-expiration-input.html">
+<link rel="import" href="js/geolocate-api.js">
 <dom-module id="checkout-form">
 
 <template>
@@ -48,7 +49,7 @@
   <form is="iron-form" id="form" method="post" action="/checkout">
 		<h2>Where do you want your Order Sent?</h2>
 		<paper-input id ="user-name" name="name" label="What's your name?" required autocomplete="name"></paper-input>
-		<paper-input id="address" label="Where would you like this shipped?" required autocomplete="street-addres"></paper-input>
+		<paper-input id="address" label="Where would you like this shipped?" required onFocus="geolocate()" type="text"></paper-input>
   		<h2>How would you like to pay?</h2>
   		<gold-cc-input name="cc-number" required auto-validate card-type="{{typeOfCard}}"></gold-cc-input>
   		<div class="horizontal layout">
@@ -78,5 +79,6 @@ Polymer({
 
 });
   </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtStNsFJnuTo2aG1-9mKf5T7OXEbchdpM&libraries=places&callback=initAutocomplete" async defer></script>
 
 </dom-module>
