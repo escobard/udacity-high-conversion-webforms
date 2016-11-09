@@ -1,9 +1,8 @@
 body {
   font-family: 'Roboto', 'Noto', sans-serif;
   font-size: 14px;
-  margin: 0;
-  padding: 24px;
   background-color: #FAFAFA;
+  margin: 0;
 }
 
 .card {
@@ -29,7 +28,13 @@ iron-toolbar {
   font-weight: 400;
   margin-bottom: 1.5em;
 }
-
+paper-toolbar.tall {
+    display: block;
+    background-color: #4285f4;
+    padding: 25px;
+    color: #fff;
+    margin-bottom: 25px;
+}
 paper-button {
   margin: 0.5em 1em 0.5em 0;
   width: 10em;
@@ -59,3 +64,5 @@ paper-tabs {
 paper-tabs paper-tab.iron-selected {
   color: #ffff8d;
 }
+
+/* paper progress bar styles */
