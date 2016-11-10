@@ -56,14 +56,15 @@
   height: 4px;
 }
 </style>
+<paper-progress></paper-progress>
   <form is="iron-form" id="form" method="post" action="/checkout">
 		<h2>Your Cart</h2>
 		<div class="cart-content">Item Image</div>
 		<div class="cart-content">Item Quantity</div>
 		<div class="cart-content">Item Price</div>
 		<h2>Where do you want your Order Sent?</h2>
-		<paper-input id ="user-name" name="name" label="What's your name?" required autocomplete="name"></paper-input>
-		<paper-input id="geo-address" label="Where would you like this shipped?" required onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
+		<paper-input id ="user-name" name="name" label="What's your name?" required autocomplete="name" aria-disabled="false"></paper-input>
+		<paper-input id="geo-address" required onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
   		<h2>How would you like to pay?</h2>
   		<gold-cc-input name="cc-number" required auto-validate card-type="{{typeOfCard}}"></gold-cc-input>
   		<div class="horizontal layout">
