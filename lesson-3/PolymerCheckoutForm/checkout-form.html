@@ -8,6 +8,7 @@
 <link rel="import" href="bower_components/gold-email-input/gold-email-input.html">
 <link rel="import" href="bower_components/gold-cc-cvc-input/gold-cc-cvc-input.html">
 <link rel="import" href="bower_components/gold-cc-expiration-input/gold-cc-expiration-input.html">
+
 <dom-module id="checkout-form">
 <template>
 <style>
@@ -47,12 +48,11 @@
     text-align: center;
     padding-bottom: 20px;
 }
-.paper-progress-0 #progressContainer.paper-progress, .paper-progress-0 .indeterminate.paper-progress:after {
-  height: 4px;
-}
 fieldset.style-scope.checkout-form {
     border: 0;
     border-bottom: solid 1px;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
 }
 
 .cart-content.left {
@@ -76,6 +76,17 @@ fieldset.style-scope.checkout-form {
     font-weight: bold;
     color: #4285f4;
     font-size: 20px;
+}
+paper-progress.transiting.x-scope.paper-progress-0 {width: 100%;}
+
+.paper-progress-0 #progressContainer.paper-progress, .paper-progress-0 .indeterminate.paper-progress::after {
+    height: 25px;
+}
+.paper-progress-0 #primaryProgress.paper-progress {
+    background: #4CAF50;
+}
+#progressContainer {
+    height: 25px !important;
 }
 </style>
   <form is="iron-form" id="form" method="post" action="/checkout">

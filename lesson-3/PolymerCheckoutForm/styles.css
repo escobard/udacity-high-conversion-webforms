@@ -10,14 +10,26 @@ body {
   max-width: 400px;
   padding: 24px;
   margin: 0 auto;
+  margin-top: 40px;
 }
 paper-progress {
-  width: 100%;
+  width: 100% !important;
   position: fixed;
   z-index: 999;
   --paper-progress-transition-duration: 0.08s;
   --paper-progress-transition-timing-function: ease;
   --paper-progress-transition-transition-delay: 0s;
+}
+paper-progress.transiting.x-scope.paper-progress-0 {width: 100%;}
+
+.paper-progress-0 #progressContainer.paper-progress, .paper-progress-0 .indeterminate.paper-progress::after {
+    height: 25px;
+}
+.paper-progress-0 #primaryProgress.paper-progress {
+    background: #4CAF50;
+}
+#progressContainer {
+    height: 25px !important;
 }
 section {
   margin: 20px;
@@ -40,7 +52,6 @@ paper-toolbar.tall {
     background-color: #4285f4;
     padding: 25px;
     color: #fff;
-    margin-bottom: 25px;
 }
 paper-button {
   margin: 0.5em 1em 0.5em 0;
@@ -74,5 +85,5 @@ paper-tabs paper-tab.iron-selected {
 
 /* paper progress bar styles */
 --paper-progress-height {
-  height: 4px;
+  height: 10px;
 }
