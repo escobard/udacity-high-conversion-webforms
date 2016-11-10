@@ -66,3 +66,6 @@ paper-tabs paper-tab.iron-selected {
 }
 
 /* paper progress bar styles */
+--paper-progress-height {
+  height: 4px;
+}

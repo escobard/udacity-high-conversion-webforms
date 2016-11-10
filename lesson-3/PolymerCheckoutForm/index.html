@@ -9,7 +9,7 @@
     <!-- Web Components -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
     </script>
-    <script src="js/geolocate-api.js"></script>
+    
     <link rel="import" href="bower_components/paper-material/paper-material.html">
     <link rel="import" href="checkout-form.html">
     <link rel="stylesheet" href="styles.css">
@@ -19,9 +19,13 @@
   <paper-toolbar class="tall">
     <h2>Dan's Polymer Checkout Form</h2>
   </paper-toolbar>
+<paper-progress indeterminate class="blue"></paper-progress>
   <paper-material class="card" elevation="1">
     <checkout-form></checkout-form>
   </paper-material>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtStNsFJnuTo2aG1-9mKf5T7OXEbchdpM&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="js/geolocate-api.js"> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPaNnwavmJ65FEF9c2YV-bG1uu9-YVvNo&libraries=places&callback=initAutocomplete"
+        async defer></script>
   </body>
+
 </html>
