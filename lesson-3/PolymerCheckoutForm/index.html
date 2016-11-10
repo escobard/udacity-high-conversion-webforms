@@ -2,14 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-
-    <title>Dan's Polymer Checkout Formr</title>
+    <title>Dan's Polymer Checkout Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Web Components -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
     </script>
-    
     <link rel="import" href="bower_components/paper-material/paper-material.html">
     <link rel="import" href="checkout-form.html">
     <link rel="stylesheet" href="styles.css">
@@ -19,13 +16,12 @@
   <paper-header-panel mode="seamed">
   <paper-toolbar class="tall">
     <h2>Dan's Polymer Checkout Form</h2>
+    <paper-progress class="transiting" value="0"></paper-progress>
   </paper-toolbar>
   </paper-progress>
   <paper-material class="card" elevation="1">
     <checkout-form></checkout-form>
   </paper-material>
   </paper-header-panel>
-
   </body>
-
 </html>
