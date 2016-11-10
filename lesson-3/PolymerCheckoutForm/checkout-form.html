@@ -1,6 +1,7 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
 <link rel="import" href="bower_components/iron-form/iron-form.html">
+<link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="bower_components/paper-input/paper-input.html">
 <link rel="import" href="bower_components/paper-button/paper-button.html">
 <link rel="import" href="bower_components/paper-progress/paper-progress.html">
@@ -46,13 +47,14 @@
     width: 33%;
     float: left;
     text-align: center;
-    padding-bottom: 20px;
 }
 fieldset.style-scope.checkout-form {
     border: 0;
-    border-bottom: solid 1px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
     padding-bottom: 15px;
+}
+fieldset#cart {
+    border-bottom: solid 1px;
 }
 
 .cart-content.left {
@@ -77,30 +79,45 @@ fieldset.style-scope.checkout-form {
     color: #4285f4;
     font-size: 20px;
 }
-
+  paper-checkbox.blue {
+    --paper-checkbox-checked-color: var(--paper-blue-500);
+    --paper-checkbox-checked-ink-color: var(--paper-blue-500);
+    --paper-checkbox-unchecked-color: var(--paper-blue-900);
+    --paper-checkbox-unchecked-ink-color: var(--paper-blue-900);
+    --paper-checkbox-label-color: var(--paper-blue-500);
+    --paper-checkbox-label-checked-color: var(--paper-blue-900);
+  }
+  .paper-checkbox-1 {
+    margin: 11px 0 0 0;
+}
 </style>
   <form is="iron-form" id="form" method="post" action="/checkout">
-    <fieldset>
+    <fieldset id="cart">
       <h2>Your Cart</h2>
 		    <div id="product-image" class="cart-content left">
-        <img src="img/kitty.jpg" alt="">
+          <img src="img/kitty.jpg" alt="">
         </div>
 		    <div id="product-description" class="cart-content right">
-        <h3>Kitty - x1</h3>
+          <h3>Kitty - x1</h3>
         </div>
 		    <div id="price" class="cart-content right">
-        <span>$500</span>
+          <span>$500</span>
         </div>
     </fieldset>
-		<h2>Where do you want your Order Sent?</h2>
-		<paper-input id="user-name" name="name" label="What's your name?" required autocomplete="name" aria-disabled="false"></paper-input>
-		<paper-input id="geo-address" required onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
-  		<h2>How would you like to pay?</h2>
-  		<gold-cc-input id="cc-number" name="cc-number" required auto-validate card-type="{{typeOfCard}}"></gold-cc-input>
-  		<div class="horizontal layout">
+		<fieldset>
+      <h2>Where do you want your Order Sent?</h2>
+		  <paper-input id="user-name" name="name" label="What's your name?" required autocomplete="name" aria-disabled="false"></paper-input>
+		  <paper-input id="geo-address" required onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
+    </fieldset>
+    <fieldset>
+  	<h2>How would you like to pay?</h2>
+  	<gold-cc-input id="cc-number" name="cc-number" required auto-validate card-type="{{typeOfCard}}"></gold-cc-input>
+  	<div class="horizontal layout">
     	<gold-cc-expiration-input id="cc-expiration" name="cc-expiration" required auto-validate label="Expiration"></gold-cc-expiration-input>
    		<gold-cc-cvc-input id="cc-cvc" name="cc-cvc" required auto-validate card-type="[[typeOfCard]]"></gold-cc-cvc-input>
-  		</div>
+  	</div>
+    <paper-checkbox id="diff-address">Ship to a different Address?</paper-checkbox>
+    </fieldset>
   		<paper-button on-click="_submit">Pay</paper-button>
   </form>
       <script src="js/app.js"> </script>
