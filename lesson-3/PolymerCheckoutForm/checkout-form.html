@@ -50,13 +50,46 @@
 .paper-progress-0 #progressContainer.paper-progress, .paper-progress-0 .indeterminate.paper-progress:after {
   height: 4px;
 }
+fieldset.style-scope.checkout-form {
+    border: 0;
+    border-bottom: solid 1px;
+}
+
+.cart-content.left {
+    width: 50%;
+}
+
+.cart-content.right {
+    width: 50%;
+}
+
+#product-image img {
+    width: 100%;
+}
+
+#product-description h3 {
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+#price span {
+    font-weight: bold;
+    color: #4285f4;
+    font-size: 20px;
+}
 </style>
   <form is="iron-form" id="form" method="post" action="/checkout">
     <fieldset>
       <h2>Your Cart</h2>
-		    <div id="product-image" class="cart-content"><img src="img/kitty.jpg" alt=""></div>
-		    <div id="product-description" class="cart-content">Kitty</div>
-		    <div id="price" class="cart-content">$500</div>
+		    <div id="product-image" class="cart-content left">
+        <img src="img/kitty.jpg" alt="">
+        </div>
+		    <div id="product-description" class="cart-content right">
+        <h3>Kitty - x1</h3>
+        </div>
+		    <div id="price" class="cart-content right">
+        <span>$500</span>
+        </div>
     </fieldset>
 		<h2>Where do you want your Order Sent?</h2>
 		<paper-input id="user-name" name="name" label="What's your name?" required autocomplete="name" aria-disabled="false"></paper-input>
