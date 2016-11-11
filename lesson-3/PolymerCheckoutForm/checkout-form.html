@@ -110,6 +110,7 @@ fieldset#cart {
 #diff-address-container h2 {
     margin-top: 0;
 }
+
 </style>
   <form is="iron-form" id="form" method="post" action="/checkout">
     <fieldset id="cart">
@@ -125,7 +126,7 @@ fieldset#cart {
         </div>
     </fieldset>
 		<fieldset>
-      <h2>Where do you want your Order Sent?</h2>
+      <h2>What is your billing address?</h2>
 		  <paper-input id="user-name" name="name" label="What's your name?" required autocomplete="name" aria-disabled="false"></paper-input>
 		  <paper-input id="geo-address" required onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
     </fieldset>

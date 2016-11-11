@@ -24,7 +24,7 @@
         // fields in the form.
         autocomplete.addListener('place_changed', fillInAddress);
 
-        // object created to generate second object API
+        // object created to populate different address field when field is active
         autocomplete2 = new google.maps.places.Autocomplete(document.getElementById('diff-geo-address'), { types: [ 'geocode' ] });
         autocomplete2.addListener('place_changed', function() {
           fillInAddress();
@@ -129,64 +129,62 @@ ProgressTracker.prototype = {
 var inputs = [
   {
     selector: '#user-name',
-    amount: 25
+    amount: 20
   }, {
     selector: '#geo-address',
-    amount: 25
+    amount: 20
   }, {
     selector: '#cc-number',
-    amount: 25
+    amount: 20
   }, {
     selector: '#cc-expiration',
-    amount: 25
+    amount: 20
   }, {
     selector: '#cc-cvc',
-    amount: 25
+    amount: 20
   }
 ];
 
 var inputsDiff = [
   {
-    selector: '#user-name',
-    amount: 16.6
-  }, {
-    selector: '#geo-address',
-    amount: 16.6
-  }, {
-    selector: '#cc-number',
-    amount: 16.6
-  }, {
-    selector: '#cc-expiration',
-    amount: 16.6
-  }, {
-    selector: '#cc-cvc',
-    amount: 16.6
-  }, {
     selector: '#user-diffname',
-    amount: 16.6
+    amount: 50
   }, {
     selector: '#diff-geo-address',
-    amount: 16.6
+    amount: 50
   }  
 ];
 
 var progressTracker = new ProgressTracker(inputs, progressBar);
 
-// JavaScript code for the different address field activation
+// JavaScript code for the different address field activation and associated functions
 function diffAddressCheck() {
 
 // Selects our Queries
-        var checkContainer = document.getElementById('diff-address');
-        var diffAddressContainer = document.getElementById('diff-address-container');
+  var checkContainer = document.getElementById('diff-address');
+  var normalProgressBar = document.getElementById('progress-normal');
+  var diffAddressContainer = document.getElementById('diff-address-container');
+  var diffAddressProgress = document.getElementById('progress-diff-address');
 
-        checkContainer.addEventListener('change', function (e) {
-        if (this.active) {
-            diffAddressContainer.className += " active";
-            var progressTrackerNewAddress = new ProgressTracker(inputsDiff, progressBarDiffAddress);
-        } else {
-            diffAddressContainer.classList.remove("active");
-            progressTrackerNewAddress = new ProgressTracker(inputs, progressBar);
-        }
-      })
+// checks the form's paper-check element's state
+  checkContainer.addEventListener('change', function (e) {
+  
+// if the check's parent element is 'active' run this if statement
+    if (this.active) {
+      diffAddressContainer.className += " active";
+      diffAddressProgress.className += " active";
+      normalProgressBar.className += " inactive";
+      var progressTrackerNewAddress = new ProgressTracker(inputsDiff, progressBarDiffAddress);
     } 
+
+// otherwise check for these classes and remove if present
+    else {
+      diffAddressContainer.classList.remove("active");
+      diffAddressProgress.classList.remove("active");
+      normalProgressBar.classList.remove("inactive");
+    }
+  })
+} 
+
+//loads this function on window load
 window.addEventListener("load", diffAddressCheck, false);
