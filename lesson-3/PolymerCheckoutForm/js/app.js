@@ -17,7 +17,7 @@
         // Create the autocomplete object, restricting the search to geographical
         // location types.
         autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('geo-address')),
+            (document.getElementById('geo-address')),
             {types: ['geocode']});
 
         // When the user selects an address from the dropdown, populate the address
@@ -67,12 +67,12 @@
             autocomplete.setBounds(circle.getBounds());
           });
         }
-      }
+      };
 
 // Set up the logic to change the progress bar
 // From the instructor notes on : https://classroom.udacity.com/nanodegrees/nd802/parts/8021345401/modules/555574864975460/lessons/5243991811/concepts/54564686870923
 
-var progressBar = document.querySelector('#progress-normal');
+var progressBar = document.querySelector('paper-progress');
 
 // updated progress bar when ship to a different address is ticked
 var progressBarDiffAddress = document.querySelector('#progress-diff-address');
@@ -162,18 +162,18 @@ function diffAddressCheck() {
 
 // Selects our Queries
   var checkContainer = document.getElementById('diff-address');
-  var normalProgressBar = document.getElementById('progress-normal');
-  var diffAddressContainer = document.getElementById('diff-address-container');
-  var diffAddressProgress = document.getElementById('progress-diff-address');
+  var normalProgressBar = document.querySelector('#progress-normal');
+  var diffAddressContainer = document.querySelector('#diff-address-container');
+  var diffAddressProgress = document.querySelector('#progress-diff-address');
 
 // checks the form's paper-check element's state
   checkContainer.addEventListener('change', function (e) {
   
 // if the check's parent element is 'active' run this if statement
-    if (this.active) {
-      diffAddressContainer.className += " active";
-      diffAddressProgress.className += " active";
-      normalProgressBar.className += " inactive";
+    if (this.checked) {
+      diffAddressContainer.classList.toggle("active");
+      diffAddressProgress.classList.toggle("active");
+      normalProgressBar.classList.toggle("inactive");
       var progressTrackerNewAddress = new ProgressTracker(inputsDiff, progressBarDiffAddress);
     } 
 

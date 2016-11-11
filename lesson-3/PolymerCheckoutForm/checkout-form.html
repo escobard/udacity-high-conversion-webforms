@@ -1,14 +1,14 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
-<link rel="import" href="../bower_components/iron-form/iron-form.html">
-<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
-<link rel="import" href="../bower_components/paper-input/paper-input.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/paper-progress/paper-progress.html">
-<link rel="import" href="../bower_components/gold-cc-input/gold-cc-input.html">
-<link rel="import" href="../bower_components/gold-email-input/gold-email-input.html">
-<link rel="import" href="../bower_components/gold-cc-cvc-input/gold-cc-cvc-input.html">
-<link rel="import" href="../bower_components/gold-cc-expiration-input/gold-cc-expiration-input.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-form/iron-form.html">
+<link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="bower_components/paper-input/paper-input.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+<link rel="import" href="bower_components/paper-progress/paper-progress.html">
+<link rel="import" href="bower_components/gold-cc-input/gold-cc-input.html">
+<link rel="import" href="bower_components/gold-email-input/gold-email-input.html">
+<link rel="import" href="bower_components/gold-cc-cvc-input/gold-cc-cvc-input.html">
+<link rel="import" href="bower_components/gold-cc-expiration-input/gold-cc-expiration-input.html">
 
 <dom-module id="checkout-form">
 <template>
@@ -94,7 +94,6 @@ fieldset#cart {
     display: block;
     opacity: 1;
     height: auto;
-    -webkit-transition: ease all 1s;
     transition: ease all 1s;
 }
 
@@ -102,7 +101,6 @@ fieldset#cart {
     display: block;
     opacity: 0;
     height: 0;
-    -webkit-transition: ease all 0.1s;
     transition: ease all 0.1s;
 }
 .paper-button-0 {
@@ -118,7 +116,7 @@ fieldset#cart {
     <fieldset id="cart">
       <h2>Your Cart</h2>
 		    <div id="product-image" class="cart-content left">
-          <img src="../img/kitty.jpg" alt="">
+          <img src="img/kitty.jpg" alt="">
         </div>
 		    <div id="product-description" class="cart-content right">
           <h3>Kitty - x1</h3>
@@ -130,7 +128,7 @@ fieldset#cart {
 		<fieldset>
       <h2>What is your billing address?</h2>
 		  <paper-input id="user-name" name="name" label="What's your name?" required autocomplete="name" aria-disabled="false"></paper-input>
-		  <paper-input id="geo-address" required onFocus="geolocate" type="text" autocomplete="street-address"></paper-input>
+		  <paper-input id="geo-address" required onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
     </fieldset>
     <fieldset id="">
   	<h2>How would you like to pay?</h2>
@@ -144,10 +142,13 @@ fieldset#cart {
      <fieldset id="diff-address-container">
       <h2>What address would you like this shipped to?</h2>
       <paper-input id="user-diffname" name="name" label="Ship to a different name?" autocomplete="name" aria-disabled="false"></paper-input>
-      <paper-input id="diff-geo-address" onFocus="geolocate" type="text" autocomplete="street-address"></paper-input>
+      <paper-input id="diff-geo-address" onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
     </fieldset>
   		<paper-button on-click="_submit">Pay</paper-button>
   </form>
+      <script src="js/app.js"> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPaNnwavmJ65FEF9c2YV-bG1uu9-YVvNo"
+        async defer></script>
 </template>
 
   <script>

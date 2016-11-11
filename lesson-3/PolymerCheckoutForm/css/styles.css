@@ -90,24 +90,28 @@ paper-tabs paper-tab.iron-selected {
 #progress-normal.inactive {
     height: 0;
     opacity: 0;
+    -webkit-transition: ease all 1s;
     transition: ease all 1s;
 }
 
 #progress-diff-address.active {
     opacity: 1;
     height: auto;
+    -webkit-transition: ease all 1s;
     transition: all ease 1s;
 }
 
 #progress-diff-address {
     opacity: 0;
     height: 0;
+    -webkit-transition: ease all 1s;
     transition: all ease 1s;
 }
 
 #progress-normal {
     height: auto;
     opacity: 1;
+    -webkit-transition: ease all 1s;
     transition: ease all 1s;
 }
 
