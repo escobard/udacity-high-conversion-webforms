@@ -90,6 +90,13 @@ fieldset#cart {
   .paper-checkbox-1 {
     margin: 11px 0 0 0;
 }
+#diff-address-container.active {
+    display: block;
+}
+
+#diff-address-container {
+    display: none;
+}
 </style>
   <form is="iron-form" id="form" method="post" action="/checkout">
     <fieldset id="cart">
@@ -117,7 +124,11 @@ fieldset#cart {
    		<gold-cc-cvc-input id="cc-cvc" name="cc-cvc" required auto-validate card-type="[[typeOfCard]]"></gold-cc-cvc-input>
   	</div>
     <paper-checkbox id="diff-address">Ship to a different Address?</paper-checkbox>
-    <div id="diff-address-container" class="inactive"></div>
+    </fieldset>
+     <fieldset id="diff-address-container">
+      <h2>What address would you like this shipped to?</h2>
+      <paper-input id="user-diffname" name="name" label="Ship to a different name?" autocomplete="name" aria-disabled="false"></paper-input>
+      <paper-input id="diff-geo-address" onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
     </fieldset>
   		<paper-button on-click="_submit">Pay</paper-button>
   </form>
