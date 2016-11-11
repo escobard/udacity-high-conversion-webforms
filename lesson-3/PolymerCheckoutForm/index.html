@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Dan's Polymer Checkout Form - Udacity - High Conversion Web Forms - Lesson 3 -  v1.0</title>
+    <title>Dan's Polymer Checkout Form - Udacity - High Conversion Web Forms - Lesson 3 -  v1.1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Web Components -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
@@ -15,9 +15,10 @@
   <body unresolved>
   <paper-header-panel mode="seamed">
   <paper-toolbar class="tall">
-    <div id="middleBar"><h2>Dan's Polymer Checkout Form - Udacity - High Conversion Web Forms - Lesson 3 - v1.0</h2></div>
+    <div id="middleBar"><h2>Dan's Polymer Checkout Form - Udacity - High Conversion Web Forms - Lesson 3 - v1.1</h2></div>
   </paper-toolbar>
-  <paper-progress class="transiting" value="0"></paper-progress>
+  <paper-progress id="progress-normal" class="transiting" value="0"></paper-progress>
+  <paper-progress id="progress-diff-address" class="transiting" value="0"></paper-progress>
   <paper-material class="card" elevation="1">
     <checkout-form></checkout-form>
   </paper-material>
