@@ -9,8 +9,7 @@ body {
   background: #FFFFFF;
   max-width: 400px;
   padding: 24px;
-  margin: 0 auto;
-  margin-top: 40px;
+  margin: 40px auto;
 }
 paper-progress {
   width: 100% !important;
@@ -52,6 +51,7 @@ paper-toolbar.tall {
     background-color: #4285f4;
     padding: 25px;
     color: #fff;
+    text-align: center;
 }.cart-content.checkout-form
 paper-button {
   margin: 0.5em 1em 0.5em 0;
