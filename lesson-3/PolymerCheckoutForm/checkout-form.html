@@ -92,10 +92,23 @@ fieldset#cart {
 }
 #diff-address-container.active {
     display: block;
+    opacity: 1;
+    height: auto;
+    transition: ease all 1s;
 }
 
 #diff-address-container {
-    display: none;
+    display: block;
+    opacity: 0;
+    height: 0;
+    transition: ease all 0.1s;
+}
+.paper-button-0 {
+    margin-top: 0 !important;
+}
+
+#diff-address-container h2 {
+    margin-top: 0;
 }
 </style>
   <form is="iron-form" id="form" method="post" action="/checkout">
@@ -116,7 +129,7 @@ fieldset#cart {
 		  <paper-input id="user-name" name="name" label="What's your name?" required autocomplete="name" aria-disabled="false"></paper-input>
 		  <paper-input id="geo-address" required onFocus="geolocate()" type="text" autocomplete="street-address"></paper-input>
     </fieldset>
-    <fieldset>
+    <fieldset id="">
   	<h2>How would you like to pay?</h2>
   	<gold-cc-input id="cc-number" name="cc-number" required auto-validate card-type="{{typeOfCard}}"></gold-cc-input>
   	<div class="horizontal layout">
