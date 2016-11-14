@@ -1,0 +1,28 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Dan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.1.0
+[debug] Platform:     win32
+[debug] Node Version: v4.6.1
+[debug] Time:         Fri Nov 11 2016 21:31:49 GMT-0700 (Mountain Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: D:\Documents\School\Udacity\high-conversion-webforms\firebase-application
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Dan\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.1.0
+[debug] Platform:     win32
+[debug] Node Version: v4.6.1
+[debug] Time:         Mon Nov 14 2016 14:20:57 GMT-0700 (Mountain Standard Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: D:\Documents\School\Udacity\high-conversion-webforms\firebase-application
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000

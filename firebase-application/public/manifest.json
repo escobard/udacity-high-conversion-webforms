@@ -1,10 +1,12 @@
 {
+
  //name of the application
   "name": "Firebase Note App",
+
+ //
   "short_name": "fbase-note-app",
   "theme_color": "#218fe7",
   "background_color": "#2196f3",
-
 
  //how the app should be presented to the user launched from the home screen. 
  //Using the value stanalone will make your web app look like a native app when launched.
@@ -15,6 +17,9 @@
 
   //this is the url that should be open when the app first starts
   "start_url": "index.html",
+
+// this is the application orientation:
+  "orientation": "any",
 
   //these are the icons provided by the codelabs for this tutorial
  "icons": [{
