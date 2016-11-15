@@ -34,14 +34,28 @@
 	You can solve this quiz with vanilla JS or jQuery!
 	 */
 
-	(function() {
-	  var square = document.querySelector('#square');
-	  var output = document.querySelector('#output');
+(function() {
+  var square = document.querySelector('#square');
+  var output = document.querySelector('#output');
+  var outputHandles = function (touchState){
+  		touchState = this.touchState; 
+  		if (this.touchState = 'touchend') {
+  			output = 'touchend';
+  		} else {
+  			output = '';
+  		}
+  };
 
-	  /*
-	  If you want to use vanilla JS, your code goes here!
-	   */
-	})();
+ // source https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+	function startup() {
+  var el = document.getElementsByTagName("square")[0];
+  el.addEventListener("touchstart", handleStart, false);
+  el.addEventListener("touchend", handleEnd, false);
+  el.addEventListener("touchcancel", handleCancel, false);
+  el.addEventListener("touchmove", handleMove, false);
+  log("initialized.");
+}
+	});
 	
 	/*
 	FYI, this is the jQuery way of running a locally scoped function on
