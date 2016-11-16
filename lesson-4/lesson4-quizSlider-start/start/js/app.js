@@ -100,6 +100,30 @@ Write your code in the attachEventListeners() function defintion, which starts o
 		/*
 		Your code goes here!
 		 */
+		// copied instructor note to better understand event tracking
+		// adds an event listener
+		toggle.addEventListener('touchstart', function (event) {
+
+		// sliding is set to true, so the box should now be allowed to slide
+		// sliding is a variable created and set to false for an event listener that triggers when the DOM loads 
+		sliding = true;
+
+		// touches array only contains 1 touch, setting the touches array value index as 0, when touch is indexed at 0, the bar is at the start of the line
+		// ToggleTracker is the function which adds movement to the box
+			ToggleTracker
+
+		// addMovement is the method of ToggleTracker that expects a posX argument.
+			.addMovement(
+
+				// this is the argument for our event listener
+				event
+
+				// this is the touches array, which sets the start point of the line as index 0 and the end is index 1 on the touches array
+				.touches[0]
+
+				// this is the current postiion of the toggle object, which was what set off the event in the first place
+				.pageX);
+		});
 	}
 
 	/*
