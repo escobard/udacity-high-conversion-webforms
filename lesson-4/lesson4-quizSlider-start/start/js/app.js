@@ -110,7 +110,7 @@ Write your code in the attachEventListeners() function defintion, which starts o
 
 		// touches array only contains 1 touch, setting the touches array value index as 0, when touch is indexed at 0, the bar is at the start of the line
 		// ToggleTracker is the function which adds movement to the box
-			ToggleTracker
+			toggleTracker
 
 		// addMovement is the method of ToggleTracker that expects a posX argument.
 			.addMovement(
@@ -124,6 +124,19 @@ Write your code in the attachEventListeners() function defintion, which starts o
 				// this is the current postiion of the toggle object, which was what set off the event in the first place
 				.pageX);
 		});
+
+		// adds the event listener for the touch move event, which checks to see if the toggle is sliding already, which is determined by the previous function
+		// changed window event listener to toggle, to make code more efficient
+		toggle.addEventListener('touchmove', function(event){
+			if (sliding) {
+				toggleTracker.addMovement(event.touches[0].pageX);
+
+				//requests the frame created by the slide function for the length of the toggleTracker object
+				requestAnimationFrame(slide);
+			}
+		});
+
+		//did not add sliding 'false' window function as its irelevant - sliding only set to true when touch is being used, sets to off when not used. might want to test on other browsers
 	}
 
 	/*
